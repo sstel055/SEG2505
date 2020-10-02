@@ -46,9 +46,16 @@ public class Exercice2 {
             addition += charArrayList.get(i);
         }
         end = System.nanoTime();
-        System.out.println("Array List addition run time: "+ String.valueOf((end-start)/1000000000));
+
+        System.out.println("Array List addition with .get(i) run time: "+ String.valueOf((end-start)/1000000000));
+
+        addition ="";
 
         
+
+
+
+
 
 
 

@@ -38,68 +38,31 @@ public class PointCP2
   //Constructors ******************************************************
 
   /**
-   * Constructs a coordinate object, with a type identifier.
+   * Constructs a coordinate object that only stores polar coordinates
    */
   public PointCP2(char type, double xOrRho, double yOrTheta){
-    if(type != 'C' && type != 'P')
-      throw new IllegalArgumentException();
-    this.rho = xOrRho;
-    this.theta = yOrTheta;
-    typeCoord = type;
-    
+    if(type != 'C' && type != 'P'){throw new IllegalArgumentException();}
+
+    if(type == 'C'){
+      this.rho = (Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2)));
+      this.theta = Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
+    }else{
+      this.rho = xOrRho;
+      this.theta = yOrTheta;
+    }
+    this.typeCoord = P;
   }
 	
-  
   //Instance methods **************************************************
  
  
-  public double getX()
-  {
-    if(typeCoord == 'C') 
-      return this.rho;
-    else 
-      return (Math.cos(Math.toRadians(this.theta)) * this.rho);
-  }
+  public double getX(){return (Math.cos(Math.toRadians(this.theta)) * this.rho);}
   
-  public double getY()
-  {
-    if(typeCoord == 'C') 
-      return this.theta;
-    else 
-      return (Math.sin(Math.toRadians(this.theta)) * this.rho);
-  }
+  public double getY(){return (Math.sin(Math.toRadians(this.theta)) * this.rho);}
   
-  public double getRho()
-  {
-    if(typeCoord == 'P') 
-      return this.rho;
-    else 
-      return (Math.sqrt(Math.pow(this.rho, 2) + Math.pow(this.theta, 2)));
-  }
+  public double getRho(){return this.rho;}
   
-  public double getTheta()
-  {
-    if(typeCoord == 'P')
-      return this.theta;
-    else 
-      return Math.toDegrees(Math.atan2(this.theta, this.rho));
-  }
-  
-	
-  /**
-   * Converts Cartesian coordinates to Polar coordinates.
-   */
-  public PointCP2 convertStorageToPolar(){
-    return new PointCP2('P',this.rho, this.theta);
-    
-  }
-	
-  /**
-   * Converts Polar coordinates to Cartesian coordinates.
-   */
-  public PointCP2 convertStorageToCartesian(){
-    return new PointCP2('C', getX(),getY());
-  }
+  public double getTheta(){return this.theta;}	
 
   /**
    * Calculates the distance in between two points using the Pythagorean
@@ -113,6 +76,7 @@ public class PointCP2
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
+    double x = getx();
     double deltaX = getX() - pointB.getX();
     double deltaY = getY() - pointB.getY();
     
