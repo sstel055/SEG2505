@@ -66,7 +66,7 @@ public class PointCP4
       this.theta = yOrTheta;
       this.x = (Math.cos(Math.toRadians(this.theta)) * this.rho);
       this.y = (Math.sin(Math.toRadians(this.theta))* this.rho);
-      
+
     }
   }
 	
@@ -144,8 +144,8 @@ public class PointCP4
   public PointCP rotatePoint(double rotation)
   {
     double radRotation = Math.toRadians(rotation);
-    double X = getX();
-    double Y = getY();
+    double X = this.x;
+    double Y = this.y;
         
     return new PointCP('C',
       (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
