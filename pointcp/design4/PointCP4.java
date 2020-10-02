@@ -72,32 +72,13 @@ public class PointCP4
   //Instance methods **************************************************
  
  
-  public double getX()
-  {
-    if(typeCoord == 'C') 
-      return x;
-    else 
-      return rho;
-  }
+  public double getX(){return x;}
   
-  public double getY()
-  {
-    if(typeCoord == 'C') 
-      return yOrTheta;
-    else 
-      return (Math.sin(Math.toRadians(yOrTheta)) * xOrRho);
-  }
+  public double getY(){return y;}
   
   public double getRho(){return rho;}
-    // this is how u turn x to rho: (Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2)));
 
-  public double getTheta()
-  {
-    if(typeCoord == 'P')
-      return yOrTheta;
-    else 
-      return Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
-  }
+  public double getTheta(){return theta;}
   
 	
   /**
