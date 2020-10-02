@@ -26,14 +26,19 @@ public class PointCP4
    * Contains the current value of X or RHO depending on the type
    * of coordinates.
    */
-  private double xOrRho;
+  private double x;
   
   /**
    * Contains the current value of Y or THETA value depending on the
    * type of coordinates.
    */
-  private double yOrTheta;
-	
+  private double y;
+
+  private double rho;
+
+  private double theta;
+  
+  
   
   //Constructors ******************************************************
 
@@ -42,11 +47,17 @@ public class PointCP4
    */
   public PointCP4(char type, double xOrRho, double yOrTheta)
   {
-    if(type != 'C' && type != 'P')
-      throw new IllegalArgumentException();
-    this.xOrRho = xOrRho;
-    this.yOrTheta = yOrTheta;
-    typeCoord = type;
+    if(type != 'C' && type != 'P'){throw new IllegalArgumentException();}
+    
+    this.typeCoord = type;
+    
+    if(type == 'C'){
+      this.x = xOrRho;
+      this.y = yOrTheta;
+    }else{
+      this.rho= xOrRho;
+      this.theta = yOrTheta;
+    }
   }
 	
   
