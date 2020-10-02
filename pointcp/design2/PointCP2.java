@@ -40,7 +40,7 @@ public class PointCP2
   /**
    * Constructs a coordinate object, with a type identifier.
    */
-  public PointCP2(char type, double xOrRho, double yOrTheta)
+  public PointCP2(char type, double Rho, double Theta)
   {
     if(type != 'C' && type != 'P')
       throw new IllegalArgumentException();
