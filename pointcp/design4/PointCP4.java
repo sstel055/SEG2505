@@ -36,7 +36,7 @@ public class PointCP4
    * Contains the current value of rho
    */
   private double rho;
-  
+
   /**
    * Contains the value of theta
    */
@@ -58,6 +58,8 @@ public class PointCP4
     if(type == 'C'){
       this.x = xOrRho;
       this.y = yOrTheta;
+      this.rho = (Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2)));
+      this.theta = Math.toDegrees(Math.atan2(this.y, this.x));
     }else{
       this.rho= xOrRho;
       this.theta = yOrTheta;
@@ -71,9 +73,9 @@ public class PointCP4
   public double getX()
   {
     if(typeCoord == 'C') 
-      return xOrRho;
+      return x;
     else 
-      return (Math.cos(Math.toRadians(yOrTheta)) * xOrRho);
+      return rho;
   }
   
   public double getY()
@@ -84,14 +86,9 @@ public class PointCP4
       return (Math.sin(Math.toRadians(yOrTheta)) * xOrRho);
   }
   
-  public double getRho()
-  {
-    if(typeCoord == 'P') 
-      return xOrRho;
-    else 
-      return (Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2)));
-  }
-  
+  public double getRho(){return rho;}
+    // this is how u turn x to rho: (Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2)));
+
   public double getTheta()
   {
     if(typeCoord == 'P')
