@@ -1,13 +1,15 @@
-
 public class Exercice2 {
-ArrayList<Char> acharArrayList = new ArrayList<Char>();
 //Char[] charArray = new Char[];
 
     
     public static void main (String args[]){
-        	long start = System.nanoTime();
-            while((System.nanoTime()- start)/1000000000<10){
-
-            }
+            
+        ArrayList<Char> charArrayList = new ArrayList<Char>();
+        Random rand = new Random();
+        long start = System.nanoTime();
+            
+        while((System.nanoTime()- start)/1000000000<10){
+            charArrayList.push((char) (rand.nextInt(26)+'a'));
+        }
     }
 }
