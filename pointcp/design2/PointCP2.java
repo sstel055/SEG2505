@@ -47,6 +47,7 @@ public class PointCP2
     this.xOrRho = xOrRho;
     this.yOrTheta = yOrTheta;
     typeCoord = type;
+    convertStorageToPolar();
   }
 	
   
