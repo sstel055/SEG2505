@@ -18,7 +18,7 @@ public class Exercice2 {
 
         ///////////Array List
         start = System.nanoTime();    
-        for(int i = 0; i<= 220000000;i++){
+        for(int i = 0; i<= 1000000;i++){
             charArrayList.add(Character.valueOf((char) (rand.nextInt(26)+'a')));
         }
         long end = System.nanoTime();
@@ -28,7 +28,7 @@ public class Exercice2 {
         //////////////LinkedList
         LinkedList<Character> linkedChar = new LinkedList<Character>();
         start = System.nanoTime(); 
-        for(int i = 0; i<= 220000000;i++){
+        for(int i = 0; i<= 1000000;i++){
             linkedChar.add(Character.valueOf((char) (rand.nextInt(26)+'a')));
         }
         end = System.nanoTime();
@@ -36,9 +36,9 @@ public class Exercice2 {
 
 
         ////////////////Array
-        char[] charArray = new char[230000000];
+        char[] charArray = new char[220000000];
         start = System.nanoTime();
-        for(int i = 0; i < 220000000;i++){
+        for(int i = 0; i < 1000000;i++){
             charArray[i] = (char) (rand.nextInt(26)+'a');
         }
         end = System.nanoTime();
