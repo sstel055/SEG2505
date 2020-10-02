@@ -61,10 +61,10 @@ public class PointCP4
       this.rho = (Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2)));
       this.theta = Math.toDegrees(Math.atan2(this.y, this.x));
     }else{
-      this.rho= xOrRho;
+      this.rho = xOrRho;
       this.theta = yOrTheta;
       this.x = (Math.cos(Math.toRadians(this.theta)) * this.rho);
-      this. y = (Math.sin(Math.toRadians(this.theta))* this.rho);
+      this.y = (Math.sin(Math.toRadians(this.theta))* this.rho);
     }
   }
 	
