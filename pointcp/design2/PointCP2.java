@@ -91,7 +91,7 @@ public class PointCP2
    * Converts Cartesian coordinates to Polar coordinates.
    */
   public PointCP2 convertStorageToPolar(){
-    return new PointCP2('P',this.getRho(), this.getTheta());
+    return new PointCP2('P',this.rho, this.getTheta());
     
   }
 	
