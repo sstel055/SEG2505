@@ -17,7 +17,7 @@ public class Exercice2 {
         // charArrayList.clear();
 
         start = System.nanoTime();    
-        for(int i = 0; i<= 100000000;i++){
+        for(int i = 0; i<= 50000000;i++){
             charArrayList.add(Character.valueOf((char) (rand.nextInt(26)+'a')));
         }
         long end = System.nanoTime();
@@ -25,22 +25,22 @@ public class Exercice2 {
         //System.out.println(x);
         System.out.println((end-start)/1000000000);
 
-        start = System.nanoTime(); 
-        for(int i = 0; i<= 100000000;i++){
-            charArrayList.add(Character.valueOf((char) (rand.nextInt(26)+'a')));
-        }
-        end = System.nanoTime();
+        // start = System.nanoTime(); 
+        // for(int i = 0; i<= 100000000;i++){
+        //     charArrayList.add(Character.valueOf((char) (rand.nextInt(26)+'a')));
+        // }
+        // end = System.nanoTime();
         
-        //System.out.println(x);
-        System.out.println((end-start)/1000000000);
+        // //System.out.println(x);
+        // System.out.println((end-start)/1000000000);
 
-        start = System.nanoTime(); 
-        for(int i = 0; i <= 100000000;i++){
-            charArrayList.add(Character.valueOf((char) (rand.nextInt(26)+'a')));
-        }
-        end = System.nanoTime();
+        // start = System.nanoTime(); 
+        // for(int i = 0; i <= 100000000;i++){
+        //     charArrayList.add(Character.valueOf((char) (rand.nextInt(26)+'a')));
+        // }
+        // end = System.nanoTime();
         
-        //System.out.println(x);
-        System.out.println((end-start)/1000000000);
+        // //System.out.println(x);
+        // System.out.println((end-start)/1000000000);
     }
 }//315409818
