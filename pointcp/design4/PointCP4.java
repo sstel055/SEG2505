@@ -65,6 +65,7 @@ public class PointCP4
       this.theta = yOrTheta;
       this.x = (Math.cos(Math.toRadians(this.theta)) * this.rho);
       this. y = (Math.sin(Math.toRadians(this.theta))* this.rho);
+      int abc = 1;
     }
   }
 	
