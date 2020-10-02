@@ -26,13 +26,13 @@ public class PointCP2
    * Contains the current value of X or RHO depending on the type
    * of coordinates.
    */
-  private double Rho;
+  private double rho;
   
   /**
    * Contains the current value of Y or THETA value depending on the
    * type of coordinates.
    */
-  private double Theta;
+  private double theta;
 	
   
   //Constructors ******************************************************
@@ -40,12 +40,11 @@ public class PointCP2
   /**
    * Constructs a coordinate object, with a type identifier.
    */
-  public PointCP2(char type, double Rho, double Theta)
-  {
+  public PointCP2(char type, double xOrRho, double yOrTheta){
     if(type != 'C' && type != 'P')
       throw new IllegalArgumentException();
-    this.xOrRho = Rho;
-    this.yOrTheta = Theta;
+    this.rho = xOrRho;
+    this.theta = yOrTheta;
     typeCoord = type;
     
   }
@@ -57,33 +56,33 @@ public class PointCP2
   public double getX()
   {
     if(typeCoord == 'C') 
-      return Rho;
+      return rho;
     else 
-      return (Math.cos(Math.toRadians(Theta)) * Rho);
+      return (Math.cos(Math.toRadians(theta)) * rho);
   }
   
   public double getY()
   {
     if(typeCoord == 'C') 
-      return Theta;
+      return theta;
     else 
-      return (Math.sin(Math.toRadians(Theta)) * Rho);
+      return (Math.sin(Math.toRadians(theta)) * rho);
   }
   
   public double getRho()
   {
     if(typeCoord == 'P') 
-      return Rho;
+      return rho;
     else 
-      return (Math.sqrt(Math.pow(Rho, 2) + Math.pow(Theta, 2)));
+      return (Math.sqrt(Math.pow(rho, 2) + Math.pow(theta, 2)));
   }
   
   public double getTheta()
   {
     if(typeCoord == 'P')
-      return Theta;
+      return theta;
     else 
-      return Math.toDegrees(Math.atan2(Theta, Rho));
+      return Math.toDegrees(Math.atan2(theta, rho));
   }
   
 	
