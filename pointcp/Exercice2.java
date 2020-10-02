@@ -15,16 +15,20 @@ public class Exercice2 {
         }//determine the length of the array to fill it for 10 seconds 
         int x = charArrayList.size();
         charArrayList.clear();
+
+        int i = 0;
         start = System.nanoTime();    
-        for(int i = 0; i <= x; i++){
+        while(i <= x){
             charArrayList.add(Character.valueOf((char) (rand.nextInt(26)+'a'))); 
+            i++;
         }
         long end = System.nanoTime();
+        
         System.out.println(x);
-        System.out.println(start-end/1000000000);
+        System.out.println((end-start)/1000000000);
     }
 }//105136606
 //105136606
 
 //Size :202252881 m
-//Stef: 157704908, 105136606, 109185481, 119490523
+//Stef: 157704908, 105136606, 109185481, 119490523//
