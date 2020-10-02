@@ -40,7 +40,7 @@ public class PointCP2
   /**
    * Constructs a coordinate object, with a type identifier.
    */
-  public PointCP2(char type, double xOrRho, double yOrTheta)
+  public PointCP2(char type, double Rho, double Theta)
   {
     if(type != 'C' && type != 'P')
       throw new IllegalArgumentException();
@@ -57,33 +57,33 @@ public class PointCP2
   public double getX()
   {
     if(typeCoord == 'C') 
-      return xOrRho;
+      return Rho;
     else 
-      return (Math.cos(Math.toRadians(yOrTheta)) * xOrRho);
+      return (Math.cos(Math.toRadians(Theta)) * Rho);
   }
   
   public double getY()
   {
     if(typeCoord == 'C') 
-      return yOrTheta;
+      return Theta;
     else 
-      return (Math.sin(Math.toRadians(yOrTheta)) * xOrRho);
+      return (Math.sin(Math.toRadians(Theta)) * Rho);
   }
   
   public double getRho()
   {
     if(typeCoord == 'P') 
-      return xOrRho;
+      return Rho;
     else 
-      return (Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2)));
+      return (Math.sqrt(Math.pow(Rho, 2) + Math.pow(Theta, 2)));
   }
   
   public double getTheta()
   {
     if(typeCoord == 'P')
-      return yOrTheta;
+      return Theta;
     else 
-      return Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
+      return Math.toDegrees(Math.atan2(Theta, Rho));
   }
   
 	
