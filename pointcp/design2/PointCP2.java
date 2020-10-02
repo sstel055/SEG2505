@@ -56,33 +56,33 @@ public class PointCP2
   public double getX()
   {
     if(typeCoord == 'C') 
-      return rho;
+      return this.rho;
     else 
-      return (Math.cos(Math.toRadians(theta)) * rho);
+      return (Math.cos(Math.toRadians(this.theta)) * this.rho);
   }
   
   public double getY()
   {
     if(typeCoord == 'C') 
-      return theta;
+      return this.theta;
     else 
-      return (Math.sin(Math.toRadians(theta)) * rho);
+      return (Math.sin(Math.toRadians(this.theta)) * this.rho);
   }
   
   public double getRho()
   {
     if(typeCoord == 'P') 
-      return rho;
+      return this.rho;
     else 
-      return (Math.sqrt(Math.pow(rho, 2) + Math.pow(theta, 2)));
+      return (Math.sqrt(Math.pow(this.rho, 2) + Math.pow(this.theta, 2)));
   }
   
   public double getTheta()
   {
     if(typeCoord == 'P')
-      return theta;
+      return this.theta;
     else 
-      return Math.toDegrees(Math.atan2(theta, rho));
+      return Math.toDegrees(Math.atan2(this.theta, rho));
   }
   
 	
@@ -90,7 +90,7 @@ public class PointCP2
    * Converts Cartesian coordinates to Polar coordinates.
    */
   public PointCP2 convertStorageToPolar(){
-    return new PointCP2('P',this.rho, this.getTheta());
+    return new PointCP2('P',this.rho, this.theta);
     
   }
 	
