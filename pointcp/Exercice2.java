@@ -17,9 +17,11 @@ public class Exercice2 {
         charArrayList.clear();
 
         int i = 0;
+        double time = 0.0;
         start = System.nanoTime();    
-        while(i <= 315409818){
+        while(i <= x){
             charArrayList.add(Character.valueOf((char) (rand.nextInt(26)+'a'))); 
+            time = System.nanoTime() - start;
             i++;
         }
         long end = System.nanoTime();
