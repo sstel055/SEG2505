@@ -82,7 +82,7 @@ public class PointCP2
     if(typeCoord == 'P')
       return this.theta;
     else 
-      return Math.toDegrees(Math.atan2(this.theta, rho));
+      return Math.toDegrees(Math.atan2(this.theta, this.rho));
   }
   
 	
