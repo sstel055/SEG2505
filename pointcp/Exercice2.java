@@ -18,7 +18,7 @@ public class Exercice2 {
 
         int i = 0;
         start = System.nanoTime();    
-        while(i <= x){
+        while(i <= 315409818){
             charArrayList.add(Character.valueOf((char) (rand.nextInt(26)+'a'))); 
             i++;
         }
@@ -27,8 +27,4 @@ public class Exercice2 {
         System.out.println(x);
         System.out.println((end-start)/1000000000);
     }
-}//105136606
-//105136606
-
-//Size :202252881 m
-//Stef: 157704908, 105136606, 109185481, 119490523//
+}//315409818
