@@ -1,6 +1,19 @@
 package design5;
 
 public abstract class PointCP5{
+    PointCP3 cp3;
+    PointCP2 cp2;
+    char type;
+    public PointCP5(char type, double xOrRho, double yOrTheta){
+        if(type != 'C' && type != 'P'){throw new IllegalArgumentException();}
+        this.type = type;
+        if(type == 'C'){
+            this.cp3 = new PointCP3(type, xOrRho, yOrTheta);
+        }else{
+            this.cp2 = new PointCP2(type, xOrRho, yOrTheta);
+        }
+    }
+
 
     public double getDistance(PointCP5 pointB){
     // Obtain differences in X and Y, sign is not important as these values
@@ -20,12 +33,11 @@ public abstract class PointCP5{
     public abstract double getRho();
 
     
-    public abstract double getTheta();
+    public abstract double getTheta(); 
+
 
     public abstract PointCP5 rotatePoint(double rotation);
 
 
-
   
-
 }
