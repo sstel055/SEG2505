@@ -35,7 +35,7 @@ public class PointCPTest
    */
   public static void main(String[] args)
   {
-    PointCP point;
+    PointCP point;//FIXME
 
     System.out.println("Cartesian-Polar Coordinates Conversion Program");
 
