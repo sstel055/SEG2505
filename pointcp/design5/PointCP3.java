@@ -12,7 +12,7 @@
  * @author Dr Timothy C. Lethbridge
  * @version July 2000
  */
-public class PointCP3
+public class PointCP3 extends PointCP5
 {
   //Instance variables ************************************************
 
