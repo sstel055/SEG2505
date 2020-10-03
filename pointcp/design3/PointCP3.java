@@ -116,8 +116,4 @@ public class PointCP3
        ? "Cartesian  (" + getX() + "," + getY() + ")"
        : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 260bfdc48cb732da35cb65700c42893b8255d2b6
 }
