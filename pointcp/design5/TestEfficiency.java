@@ -123,7 +123,7 @@ public class TestEfficiency {
             cpArray[i].getDistance(PointCP(cp[i],0,0));//XXX
         }
         end = System.nanoTime();
-        System.out.println("PointCP getTheta time(ms): "+String.valueOf((end-start)/1000000));
+        System.out.println("PointCP getDistance time(ms): "+String.valueOf((end-start)/1000000));
 
         //getDistance() fuction test for PointCP5
         start = System.nanoTime();
@@ -131,7 +131,7 @@ public class TestEfficiency {
             cp5Array[i].getDistance(PointCP5(cp[i],0,0));//XXX
         }
         end = System.nanoTime();
-        System.out.println("PointCP5 getTheta time(ms): "+String.valueOf((end-start)/1000000));
+        System.out.println("PointCP5 getDistance time(ms): "+String.valueOf((end-start)/1000000));
         
         
         //////////////////////////////////////////////////////////rotatePoint() Section///////////////////////////////////////////
@@ -142,7 +142,7 @@ public class TestEfficiency {
             cpArray[i].rotatePoint(angle[i]);//XXX
         }
         end = System.nanoTime();
-        System.out.println("PointCP getTheta time(ms): "+String.valueOf((end-start)/1000000));
+        System.out.println("PointCP rotatePoint time(ms): "+String.valueOf((end-start)/1000000));
 
         //rotatePoint() fuction test for PointCP5
         start = System.nanoTime();
@@ -150,7 +150,7 @@ public class TestEfficiency {
             cp5Array[i].rotatePoint(angle[i]);//XXX
         }
         end = System.nanoTime();
-        System.out.println("PointCP5 getTheta time(ms): "+String.valueOf((end-start)/1000000));
+        System.out.println("PointCP5 rotatePoint time(ms): "+String.valueOf((end-start)/1000000));
 
          
     }
