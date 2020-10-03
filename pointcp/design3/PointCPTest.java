@@ -71,7 +71,7 @@ public class PointCPTest
       System.out.println("--------------------------------");
 
       // Cartesian to Polar testing
-      System.out.println("After converting to Polar:\n" + "Polar (" + point.getRho() + "," + point.getTheta() + ")");
+      System.out.println("After converting to Polar:\n" + "Polar [" + point.getRho() + "," + point.getTheta() + "]");
       test.convertStorageToPolar();
       System.out.println("\nExpected Polar value based off PointCP:\n" + test);
       if ((point.getRho() == test.getRho()) && (point.getTheta() == test.getTheta())) {
@@ -83,7 +83,6 @@ public class PointCPTest
       System.out.println("--------------------------------");
 
       // Distance testing
-      
       PointCP pointZero1 = new PointCP('C', 0, 0);
       PointCP3 pointZero2 = new PointCP3('C', 0, 0);
       System.out.println("Distance from PointCP3 to (0, 0): \nDistance: " + point.getDistance(pointZero2));
@@ -97,10 +96,10 @@ public class PointCPTest
 
       // Rotation testing
       point = point.rotatePoint(45);
-      System.out.println("After rotating 45 degrees:\n" +  "Polar (" + point.getRho() + "," + point.getTheta() + ")");
       test = test.rotatePoint(45);
+      System.out.println("After rotating 45 degrees:\n" +  "Cartesian (" + point.getX() + "," + point.getY() + ")");
       System.out.println("\nExpected Polar value based off PointCP:\n" + test);
-      if ((point.getRho() == test.getRho()) && (point.getTheta() == test.getTheta())) {
+      if ((point.getX() == test.getX()) && (point.getY() == test.getY())) {
         System.out.println("Rotation was successful");
       } else {
         System.out.println("Rotation was not successful");
@@ -130,7 +129,7 @@ public class PointCPTest
     double b = 0.0;
 
     // Allow the user to enter the three different arguments
-    for (int i = 0; i < 3; i++)
+    for (int i = 1; i < 3; i++)
     {
       while (!(isOK))
       {
@@ -147,7 +146,7 @@ public class PointCPTest
           System.out.print("Enter the value of " 
             + (coordType == 'C' 
               ? (i == 1 ? "X " : "Y ")
-              : (i == 1 ? "Rho " : "Theta ")) 
+              : (i == 1 ? "X " : "Y ")) 
             + "using a decimal point(.): ");
         }
 
@@ -196,6 +195,6 @@ public class PointCPTest
       isOK = false;
     }
     //Return a new PointCP object
-    return (new PointCP3(coordType, a, b));
+    return (new PointCP3('C', a, b));
   }
 }

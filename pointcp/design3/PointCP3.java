@@ -63,15 +63,8 @@ public class PointCP3
   public double getY(){return this.y;}
 
   public double getRho(){return (Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2))); }
-<<<<<<< HEAD
   
-  public double getTheta(){return (Math.toDegrees(Math.atan2(x, y))) ;}
-  
-=======
-
-  public double getTheta(){return (Math.toDegrees(Math.atan2(yOrTheta, xOrRho))) ;}
-
->>>>>>> 260bfdc48cb732da35cb65700c42893b8255d2b6
+  public double getTheta(){return (Math.toDegrees(Math.atan2(this.x, this.y))) ;}
 
   /**
    * Calculates the distance in between two points using the Pythagorean
@@ -81,7 +74,7 @@ public class PointCP3
    * @param pointB The second point.
    * @return The distance between the two points.
    */
-  public double getDistance(PointCP pointB)
+  public double getDistance(PointCP3 pointB)
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
@@ -99,13 +92,13 @@ public class PointCP3
    * @param rotation The number of degrees to rotate the point.
    * @return The rotated image of the original point.
    */
-  public PointCP rotatePoint(double rotation)
+  public PointCP3 rotatePoint(double rotation)
   {
     double radRotation = Math.toRadians(rotation);
     double X = getX();
     double Y = getY();
 
-    return new PointCP('C',
+    return new PointCP3('C',
       (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
       (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
   }
@@ -121,8 +114,5 @@ public class PointCP3
        ? "Cartesian  (" + getX() + "," + getY() + ")"
        : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> 260bfdc48cb732da35cb65700c42893b8255d2b6
 }
