@@ -95,6 +95,7 @@ public class PointCPTest
       System.out.println("--------------------------------");
 
       // Rotation testing
+      test = new PointCP('C', point.getX(), point.getY());
       point = point.rotatePoint(45);
       test = test.rotatePoint(45);
       System.out.println("After rotating 45 degrees:\n" +  "Cartesian (" + point.getX() + "," + point.getY() + ")");
