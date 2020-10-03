@@ -63,15 +63,10 @@ public class PointCP3
   public double getY(){return this.y;}
 
   public double getRho(){return (Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2))); }
-<<<<<<< HEAD
   
   public double getTheta(){return (Math.toDegrees(Math.atan2(x, y))) ;}
   
-=======
 
-  public double getTheta(){return (Math.toDegrees(Math.atan2(yOrTheta, xOrRho))) ;}
-
->>>>>>> 260bfdc48cb732da35cb65700c42893b8255d2b6
 
   /**
    * Calculates the distance in between two points using the Pythagorean
