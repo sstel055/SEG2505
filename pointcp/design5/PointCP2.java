@@ -79,8 +79,8 @@ public class PointCP2 extends PointCP5
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
     double x = getX();
-    double deltaX = getX() - pointB.getX();
-    double deltaY = getY() - pointB.getY();
+    double deltaX = x - pointB.getX();
+    double deltaY = x - pointB.getY();
     
     return Math.sqrt((Math.pow(deltaX, 2) + Math.pow(deltaY, 2)));
   }
