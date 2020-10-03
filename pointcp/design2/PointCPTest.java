@@ -4,6 +4,7 @@
 
 import java.io.*;
 
+
 /**
  * This class prompts the user for a set of coordinates, and then 
  * converts them from polar to cartesian or vice-versa.
@@ -33,7 +34,8 @@ public class PointCPTest
    */
   public static void main(String[] args)
   {
-    PointCP point;
+    PointCP2 point;
+    PointCP test;
 
     System.out.println("Cartesian-Polar Coordinates Conversion Program");
 
@@ -42,7 +44,10 @@ public class PointCPTest
     // If he did not, prompt the user for them.
     try
     {
-      point = new PointCP(args[0].toUpperCase().charAt(0), 
+      point = new PointCP2(args[0].toUpperCase().charAt(0), 
+        Double.valueOf(args[1]).doubleValue(), 
+        Double.valueOf(args[2]).doubleValue());
+      test = new PointCP(args[0].toUpperCase().charAt(0), 
         Double.valueOf(args[1]).doubleValue(), 
         Double.valueOf(args[2]).doubleValue());
     }
@@ -63,11 +68,12 @@ public class PointCPTest
         return;
       }
     }
+    
+    test = new PointCP('P', point.getRho(), point.getTheta());
     System.out.println("\nYou entered:\n" + point);
-    point.convertStorageToCartesian();
-    System.out.println("\nAfter asking to store as Cartesian:\n" + point);
-    point.convertStorageToPolar();
-    System.out.println("\nAfter asking to store as Polar:\n" + point);
+    System.out.println("\nAfter asking to convert to Cartesian:\n" + "Cartesian [" + point.getX() + "," + point.getY() + "]" + "\n");
+    test.convertStorageToCartesian();
+    System.out.println("\nExpected Cartesian value is:\n" + test.toString());
   }
 
   /**
@@ -80,7 +86,7 @@ public class PointCPTest
    * @throws IOException If there is an error getting input from
    *         the user.
    */
-  private static PointCP getInput() throws IOException
+  private static PointCP2 getInput() throws IOException
   {
     byte[] buffer = new byte[1024];  //Buffer to hold byte input
     boolean isOK = false;  // Flag set if input correct
@@ -158,6 +164,6 @@ public class PointCPTest
       isOK = false;
     }
     //Return a new PointCP object
-    return (new PointCP(coordType, a, b));
+    return (new PointCP2(coordType, a, b));
   }
 }

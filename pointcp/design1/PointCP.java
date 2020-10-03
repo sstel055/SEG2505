@@ -12,6 +12,8 @@
  * @author Dr Timothy C. Lethbridge
  * @version July 2000
  */
+
+
 public class PointCP
 {
   //Instance variables ************************************************
