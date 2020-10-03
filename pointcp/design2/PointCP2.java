@@ -1,3 +1,5 @@
+package design2;
+
 // This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com 
@@ -76,7 +78,6 @@ public class PointCP2
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
-    double x = getX();
     double deltaX = getX() - pointB.getX();
     double deltaY = getY() - pointB.getY();
     
