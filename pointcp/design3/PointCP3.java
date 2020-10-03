@@ -1,6 +1,6 @@
 // This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
-// license found at www.lloseng.com 
+// license found at www.lloseng.com
 
 /**
  * This class contains instances of coordinates in either polar or
@@ -21,20 +21,20 @@ public class PointCP3
    * coordinates that are being dealt with.
    */
   private char typeCoord;
-  
+
   /**
    * Contains the current value of X or RHO depending on the type
    * of coordinates.
    */
   private double x;
-  
+
   /**
    * Contains the current value of Y or THETA value depending on the
    * type of coordinates.
    */
   private double y;
-	
-  
+
+
   //Constructors ******************************************************
 
   /**
@@ -50,22 +50,28 @@ public class PointCP3
       this.x = (Math.cos(Math.toRadians(yOrTheta)) * xOrRho);
       this.y = (Math.sin(Math.toRadians(yOrTheta)) * xOrRho);
     }
- 
+
     this.typeCoord = 'C';
   }
-	
-  
+
+
   //Instance methods **************************************************
- 
- 
+
+
   public double getX(){return this.x;}
-  
+
   public double getY(){return this.y;}
-  
+
   public double getRho(){return (Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2))); }
+<<<<<<< HEAD
   
   public double getTheta(){return (Math.toDegrees(Math.atan2(x, y))) ;}
   
+=======
+
+  public double getTheta(){return (Math.toDegrees(Math.atan2(yOrTheta, xOrRho))) ;}
+
+>>>>>>> 260bfdc48cb732da35cb65700c42893b8255d2b6
 
   /**
    * Calculates the distance in between two points using the Pythagorean
@@ -81,7 +87,7 @@ public class PointCP3
     // will be squared later.
     double deltaX = getX() - pointB.getX();
     double deltaY = getY() - pointB.getY();
-    
+
     return Math.sqrt((Math.pow(deltaX, 2) + Math.pow(deltaY, 2)));
   }
 
@@ -98,7 +104,7 @@ public class PointCP3
     double radRotation = Math.toRadians(rotation);
     double X = getX();
     double Y = getY();
-        
+
     return new PointCP('C',
       (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
       (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
@@ -111,9 +117,12 @@ public class PointCP3
    */
   public String toString()
   {
-    return "Stored as " + (typeCoord == 'C' 
+    return "Stored as " + (typeCoord == 'C'
        ? "Cartesian  (" + getX() + "," + getY() + ")"
        : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 260bfdc48cb732da35cb65700c42893b8255d2b6
 }
