@@ -14,7 +14,7 @@ package design5;
  * @author Dr Timothy C. Lethbridge
  * @version July 2000
  */
-public class PointCP2
+public class PointCP2 extends PointCP5
 {
   //Instance variables ************************************************
 
