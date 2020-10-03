@@ -43,18 +43,18 @@ public class PointCP2
   public PointCP2(char type, double xOrRho, double yOrTheta){
     if(type != 'C' && type != 'P'){throw new IllegalArgumentException();}
 
-    if(type == 'C'){
+    if (type == 'C') {
       this.rho = (Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2)));
       this.theta = Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
-    }else{
+    } else {
       this.rho = xOrRho;
       this.theta = yOrTheta;
     }
     this.typeCoord = 'P';
   }
+
 	
   //Instance methods **************************************************
- 
  
   public double getX(){return (Math.cos(Math.toRadians(this.theta)) * this.rho);}
   
@@ -109,11 +109,10 @@ public class PointCP2
    */
   public String toString()
   {
-    return "Stored as " + (typeCoord == 'P' 
-       ? "Polar  (" + getX() + "," + getY() + ")"
-       : "Cartesian [" + getRho() + "," + getTheta() + "]") + "\n";
+    return "Stored as " + (typeCoord == 'C' 
+       ? "Cartesian  (" + getX() + "," + getY() + ")"
+       : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
   }
-
 
 }
 
