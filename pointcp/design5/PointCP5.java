@@ -1,3 +1,5 @@
+package design5;
+
 public abstract class PointCP5{
 
     public double getDistance(PointCP2 pointB){
@@ -20,4 +22,9 @@ public abstract class PointCP5{
     public PointCP rotatePoint(double rotation){
 
     }
+
+
+
+  
+
 }
