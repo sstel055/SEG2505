@@ -1,4 +1,3 @@
-package design5;
 import java.util.Random;
 public class TestEfficiency {
     public static void main(String[] args) {
@@ -18,8 +17,6 @@ public class TestEfficiency {
         long end = System.nanoTime();
         System.out.println("Average PointCP Declaration time(runtime/numberOfPoints): "+String.valueOf(((end-start)/1000000000)/numberOfPoints));
 
-
-
         //Declaration for PointCP2 
         start = System.nanoTime();
         for(int i = 0; i<numberOfPoints;i++){
@@ -29,13 +26,13 @@ public class TestEfficiency {
         System.out.println("Average PointCP2 Declaration time(runtime/numberOfPoints): "+String.valueOf(((end-start)/1000000000)/numberOfPoints));
 
 
-
         //Declaration for PointCP3 
         for(int i = 0; i<numberOfPoints;i++){
             cpArray3[i] = new PointCP3((char)cOrP.charAt(r.nextInt(2)) , r.nextInt(1001), (double) r.nextInt(361));
         }
         System.out.println("Average PointCP3 Declaration time(runtime/numberOfPoints): "+String.valueOf(((end-start)/1000000000)/numberOfPoints));
 
+        
 
 
     }
