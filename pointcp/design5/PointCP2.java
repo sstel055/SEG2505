@@ -1,4 +1,4 @@
-package design5;
+package design2;
 
 // This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
@@ -14,7 +14,7 @@ package design5;
  * @author Dr Timothy C. Lethbridge
  * @version July 2000
  */
-public class PointCP2 extends PointCP5
+public class PointCP2
 {
   //Instance variables ************************************************
 
@@ -45,18 +45,18 @@ public class PointCP2 extends PointCP5
   public PointCP2(char type, double xOrRho, double yOrTheta){
     if(type != 'C' && type != 'P'){throw new IllegalArgumentException();}
 
-    if(type == 'C'){
+    if (type == 'C') {
       this.rho = (Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2)));
       this.theta = Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
-    }else{
+    } else {
       this.rho = xOrRho;
       this.theta = yOrTheta;
     }
     this.typeCoord = 'P';
   }
+
 	
   //Instance methods **************************************************
- 
  
   public double getX(){return (Math.cos(Math.toRadians(this.theta)) * this.rho);}
   
@@ -78,9 +78,8 @@ public class PointCP2 extends PointCP5
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
-    double x = getX();
-    double deltaX = x - pointB.getX();
-    double deltaY = x - pointB.getY();
+    double deltaX = getX() - pointB.getX();
+    double deltaY = getY() - pointB.getY(); 
     
     return Math.sqrt((Math.pow(deltaX, 2) + Math.pow(deltaY, 2)));
   }
@@ -115,4 +114,7 @@ public class PointCP2 extends PointCP5
        ? "Cartesian  (" + getX() + "," + getY() + ")"
        : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
   }
+
 }
+
+
