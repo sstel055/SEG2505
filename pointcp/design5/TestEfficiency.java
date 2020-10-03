@@ -48,7 +48,7 @@ public class TestEfficiency {
             cpArray[i].getX();
         }
         end = System.nanoTime();
-        System.out.println("PointCP getx time(ms): "+String.valueOf((end-start)/1000000));
+        System.out.println("PointCP getX time(ms): "+String.valueOf((end-start)/1000000));
 
         //getx() fuction test for PointCP5
         start = System.nanoTime();
@@ -56,9 +56,59 @@ public class TestEfficiency {
             cp5Array[i].getX();
         }
         end = System.nanoTime();
-        System.out.println("PointCP5 getx time(ms): "+String.valueOf((end-start)/1000000));
+        System.out.println("PointCP5 getX time(ms): "+String.valueOf((end-start)/1000000));
 
         //////////////////////////////////////////////////////////getY() Section///////////////////////////////////////////
+        //getY() function test for PointCP
+        start = System.nanoTime();
+        for (int i=0; i<numberOfPoints; i++) {
+            cpArray[i].getY();
+        }
+        end = System.nanoTime();
+        System.out.println("PointCP getY time(ms): "+String.valueOf((end-start)/1000000));
+
+        //getY() fuction test for PointCP5
+        start = System.nanoTime();
+        for (int i=0; i<numberOfPoints; i++) {
+            cp5Array[i].getY();
+        }
+        end = System.nanoTime();
+        System.out.println("PointCP5 getY time(ms): "+String.valueOf((end-start)/1000000));
+
+        //////////////////////////////////////////////////////////getRho() Section///////////////////////////////////////////
+        //getrho() function test for PointCP
+        start = System.nanoTime();
+        for (int i=0; i<numberOfPoints; i++) {
+            cpArray[i].getRho();
+        }
+        end = System.nanoTime();
+        System.out.println("PointCP getRho time(ms): "+String.valueOf((end-start)/1000000));
+
+        //gethrho() fuction test for PointCP5
+        start = System.nanoTime();
+        for (int i=0; i<numberOfPoints; i++) {
+            cp5Array[i].getRho();
+        }
+        end = System.nanoTime();
+        System.out.println("PointCP5 getRho time(ms): "+String.valueOf((end-start)/1000000));
+
+        //////////////////////////////////////////////////////////getTheta() Section///////////////////////////////////////////
+        //gettheta() function test for PointCP
+        start = System.nanoTime();
+        for (int i=0; i<numberOfPoints; i++) {
+            cpArray[i].getTheta();
+        }
+        end = System.nanoTime();
+        System.out.println("PointCP getTheta time(ms): "+String.valueOf((end-start)/1000000));
+
+        //gettheta() fuction test for PointCP5
+        start = System.nanoTime();
+        for (int i=0; i<numberOfPoints; i++) {
+            cp5Array[i].getTheta();
+        }
+        end = System.nanoTime();
+        System.out.println("PointCP5 getTheta time(ms): "+String.valueOf((end-start)/1000000));
+
 
 
 
