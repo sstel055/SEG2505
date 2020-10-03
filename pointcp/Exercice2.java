@@ -59,11 +59,11 @@ public class Exercice2 {
         addition="";
         start = System.nanoTime();
         for(Character i: charArray){
-
+            addition+=i;
         }
         end = System.nanoTime();
         System.out.println("Array addition with advanced for loop run time: "+ String.valueOf((end-start)/1000000000));
-
+        
 
         
 
