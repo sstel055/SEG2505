@@ -66,7 +66,7 @@ public class PointCP3 extends PointCP5
   
   public double getRho(){return (Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2))); }
   
-  public double getTheta(){return (Math.toDegrees(Math.atan2(yOrTheta, xOrRho))) ;}
+  public double getTheta(){return (Math.toDegrees(Math.atan2(this.y, this.x))) ;}
   
 
   /**
@@ -77,7 +77,7 @@ public class PointCP3 extends PointCP5
    * @param pointB The second point.
    * @return The distance between the two points.
    */
-  public double getDistance(PointCP pointB)
+  public double getDistance(PointCP3 pointB)
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
@@ -95,13 +95,13 @@ public class PointCP3 extends PointCP5
    * @param rotation The number of degrees to rotate the point.
    * @return The rotated image of the original point.
    */
-  public PointCP rotatePoint(double rotation)
+  public PointCP3 rotatePoint(double rotation)
   {
     double radRotation = Math.toRadians(rotation);
     double X = getX();
     double Y = getY();
         
-    return new PointCP('C',
+    return new PointCP3('C',
       (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
       (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
   }
