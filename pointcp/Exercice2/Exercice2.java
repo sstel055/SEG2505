@@ -41,7 +41,7 @@ public class Exercice2 {
         System.out.println("Array run time: "+String.valueOf((end-start)/1000000000));
 
         //////////////////Addition//////////////////////////////////////////////////////// 
-       
+        @SuppressWarnings("unused")
         String addition = "";
         start = System.nanoTime();
         for(Character i : charArrayList){
