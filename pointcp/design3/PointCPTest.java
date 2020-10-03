@@ -1,4 +1,4 @@
-package design3;
+
 
 // This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source

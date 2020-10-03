@@ -1,5 +1,4 @@
 
-
 // This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com 
@@ -14,7 +13,9 @@
  * @author Dr Timothy C. Lethbridge
  * @version July 2000
  */
-public class PointCP2
+
+
+public class PointCP
 {
   //Instance variables ************************************************
 
@@ -28,43 +29,97 @@ public class PointCP2
    * Contains the current value of X or RHO depending on the type
    * of coordinates.
    */
-  private double rho;
+  private double xOrRho;
   
   /**
    * Contains the current value of Y or THETA value depending on the
    * type of coordinates.
    */
-  private double theta;
+  private double yOrTheta;
 	
   
   //Constructors ******************************************************
 
   /**
-   * Constructs a coordinate object that only stores polar coordinates
+   * Constructs a coordinate object, with a type identifier.
    */
-  public PointCP2(char type, double xOrRho, double yOrTheta){
-    if(type != 'C' && type != 'P'){throw new IllegalArgumentException();}
-
-    if (type == 'C') {
-      this.rho = (Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2)));
-      this.theta = Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
-    } else {
-      this.rho = xOrRho;
-      this.theta = yOrTheta;
-    }
-    this.typeCoord = 'P';
+  public PointCP(char type, double xOrRho, double yOrTheta)
+  {
+    if(type != 'C' && type != 'P')
+      throw new IllegalArgumentException();
+    this.xOrRho = xOrRho;
+    this.yOrTheta = yOrTheta;
+    typeCoord = type;
   }
-
 	
+  
   //Instance methods **************************************************
  
-  public double getX(){return (Math.cos(Math.toRadians(this.theta)) * this.rho);}
+ 
+  public double getX()
+  {
+    if(typeCoord == 'C') 
+      return xOrRho;
+    else 
+      return (Math.cos(Math.toRadians(yOrTheta)) * xOrRho);
+  }
   
-  public double getY(){return (Math.sin(Math.toRadians(this.theta)) * this.rho);}
+  public double getY()
+  {
+    if(typeCoord == 'C') 
+      return yOrTheta;
+    else 
+      return (Math.sin(Math.toRadians(yOrTheta)) * xOrRho);
+  }
   
-  public double getRho(){return this.rho;}
+  public double getRho()
+  {
+    if(typeCoord == 'P') 
+      return xOrRho;
+    else 
+      return (Math.sqrt(Math.pow(xOrRho, 2) + Math.pow(yOrTheta, 2)));
+  }
   
-  public double getTheta(){return this.theta;}	
+  public double getTheta()
+  {
+    if(typeCoord == 'P')
+      return yOrTheta;
+    else 
+      return Math.toDegrees(Math.atan2(yOrTheta, xOrRho));
+  }
+  
+	
+  /**
+   * Converts Cartesian coordinates to Polar coordinates.
+   */
+  public void convertStorageToPolar()
+  {
+    if(typeCoord != 'P')
+    {
+      //Calculate RHO and THETA
+      double temp = getRho();
+      yOrTheta = getTheta();
+      xOrRho = temp;
+      
+      typeCoord = 'P';  //Change coord type identifier
+    }
+  }
+	
+  /**
+   * Converts Polar coordinates to Cartesian coordinates.
+   */
+  public void convertStorageToCartesian()
+  {
+    if(typeCoord != 'C')
+    {
+      //Calculate X and Y
+      double temp = getX();
+      yOrTheta = getY();
+      xOrRho = temp;
+   
+      typeCoord = 'C';	//Change coord type identifier
+    }
+  }
 
   /**
    * Calculates the distance in between two points using the Pythagorean
@@ -74,12 +129,12 @@ public class PointCP2
    * @param pointB The second point.
    * @return The distance between the two points.
    */
-  public double getDistance(PointCP2 pointB)
+  public double getDistance(PointCP pointB)
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
     double deltaX = getX() - pointB.getX();
-    double deltaY = getY() - pointB.getY(); 
+    double deltaY = getY() - pointB.getY();
     
     return Math.sqrt((Math.pow(deltaX, 2) + Math.pow(deltaY, 2)));
   }
@@ -92,13 +147,13 @@ public class PointCP2
    * @param rotation The number of degrees to rotate the point.
    * @return The rotated image of the original point.
    */
-  public PointCP2 rotatePoint(double rotation)
+  public PointCP rotatePoint(double rotation)
   {
     double radRotation = Math.toRadians(rotation);
     double X = getX();
     double Y = getY();
         
-    return new PointCP2('C',
+    return new PointCP('C',
       (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
       (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
   }
@@ -114,7 +169,4 @@ public class PointCP2
        ? "Cartesian  (" + getX() + "," + getY() + ")"
        : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
   }
-
 }
-
-

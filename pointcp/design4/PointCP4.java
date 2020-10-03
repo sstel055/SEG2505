@@ -1,4 +1,4 @@
-package design4;
+
 
 // This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
@@ -83,6 +83,8 @@ public class PointCP4
   public double getRho(){return rho;}
 
   public double getTheta(){return theta;}
+
+  public char getTypeCoord(){return typeCoord;}
   
 
   /**

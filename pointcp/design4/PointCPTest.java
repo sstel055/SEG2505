@@ -1,4 +1,4 @@
-package design4;
+
 
 // This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
@@ -35,7 +35,8 @@ public class PointCPTest
    */
   public static void main(String[] args)
   {
-    PointCP point;
+    PointCP4 point;
+    PointCP test;
 
     System.out.println("Cartesian-Polar Coordinates Conversion Program");
 
@@ -44,7 +45,7 @@ public class PointCPTest
     // If he did not, prompt the user for them.
     try
     {
-      point = new PointCP(args[0].toUpperCase().charAt(0), 
+      point = new PointCP4(args[0].toUpperCase().charAt(0), 
         Double.valueOf(args[1]).doubleValue(), 
         Double.valueOf(args[2]).doubleValue());
     }
@@ -65,11 +66,92 @@ public class PointCPTest
         return;
       }
     }
-    System.out.println("\nYou entered:\n" + point);
-    point.convertStorageToCartesian();
-    System.out.println("\nAfter asking to store as Cartesian:\n" + point);
-    point.convertStorageToPolar();
-    System.out.println("\nAfter asking to store as Polar:\n" + point);
+
+    if (point.getTypeCoord() == 'C') {
+	    // Variable delaration for testing
+	    test = new PointCP('C', point.getX(), point.getY());
+	    System.out.print("\n\nYou entered: " + point);
+	    System.out.println("--------------------------------");
+
+	    // Cartesian to Polar testing
+	    System.out.println("After converting to Polar:\n" + "Polar [" + point.getRho() + "," + point.getTheta() + "]");
+	    test.convertStorageToPolar();
+	    System.out.println("\nExpected Polar value based off PointCP:\n" + test);
+	    if ((point.getRho() == test.getRho()) && (point.getTheta() == test.getTheta())) {
+	      System.out.println("Conversion from Cartesian to Polar was successful");
+	    } else {
+	      System.out.println("Conversion from Cartesian to Polar was not successful");
+	    }
+	    test.convertStorageToCartesian();
+	    System.out.println("--------------------------------");
+
+	    // Distance testing
+	    PointCP pointZero1 = new PointCP('C', 0, 0);
+	    PointCP4 pointZero2 = new PointCP4('C', 0, 0);
+	    System.out.println("Distance from PointCP3 to (0, 0): \nDistance: " + point.getDistance(pointZero2));
+	    System.out.println("\nDistance from PointCP to (0, 0): \nDistance: " + test.getDistance(pointZero1));
+	    if (point.getDistance(pointZero2) == test.getDistance(pointZero1)) {
+	      System.out.println("\nDistance calculation was successful");
+	    } else {
+	      System.out.println("\nDistance calculation was not successful");
+	    }
+	    System.out.println("--------------------------------");
+
+	    // Rotation testing
+	    test = new PointCP('C', point.getX(), point.getY());
+	    point = point.rotatePoint(45);
+	    test = test.rotatePoint(45);
+	    System.out.println("After rotating 45 degrees:\n" +  "Cartesian (" + point.getX() + "," + point.getY() + ")");
+	    System.out.println("\nExpected Polar value based off PointCP:\n" + test);
+	    if ((point.getX() == test.getX()) && (point.getY() == test.getY())) {
+	      System.out.println("Rotation was successful");
+	    } else {
+	      System.out.println("Rotation was not successful");
+	    }
+	    System.out.println("--------------------------------\n");
+    } else {
+	 	// Variable delaration for testing
+	    test = new PointCP('P', point.getRho(), point.getTheta());
+	    System.out.print("\n\nYou entered: " + point);
+	    System.out.println("--------------------------------");
+
+	    // Polar to Cartesian testing
+	    System.out.println("After converting to Cartesian:\n" + "Cartesian (" + point.getX() + "," + point.getY() + ")");
+	    test.convertStorageToCartesian();
+	    System.out.println("\nExpected Cartesian value based off PointCP:\n" + test);
+	    if ((point.getX() == test.getX()) && (point.getY() == test.getY())) {
+	      System.out.println("Conversion from Polar to Cartesian was successful");
+	    } else {
+	      System.out.println("Conversion from Polar to Cartesian was not successful");
+	    }
+	    test.convertStorageToPolar();
+	    System.out.println("--------------------------------");
+
+	    // Distance testing
+	    PointCP4 pointZero2 = new PointCP4('P', 0, 0);
+	    PointCP pointZero1 = new PointCP('P', 0, 0);
+	    System.out.println("Distance from PointCP2 to (0, 0): \nDistance: " + point.getDistance(pointZero2));
+	    System.out.println("\nDistance from PointCP to (0, 0): \nDistance: " + test.getDistance(pointZero1));
+	    if (point.getDistance(pointZero2) == test.getDistance(pointZero1)) {
+	      System.out.println("\nDistance calculation was successful");
+	    } else {
+	      System.out.println("\nDistance calculation was not successful");
+	    }
+	    System.out.println("--------------------------------");
+
+	    // Rotation testing
+	    point = point.rotatePoint(45);
+	    System.out.println("After rotating 45 degrees:\n" +  "Cartesian (" + point.getX() + "," + point.getY() + ")");
+	    test = test.rotatePoint(45);
+	    System.out.println("\nExpected Cartesian value based off PointCP:\n" + test);
+	    if ((point.getX() == test.getX()) && (point.getY() == test.getY())) {
+	      System.out.println("Rotation was successful");
+	    } else {
+	      System.out.println("Rotation was not successful");
+	    }
+	    System.out.println("--------------------------------\n");
+	}
+    
   }
 
   /**
@@ -82,7 +164,7 @@ public class PointCPTest
    * @throws IOException If there is an error getting input from
    *         the user.
    */
-  private static PointCP getInput() throws IOException
+  private static PointCP4 getInput() throws IOException
   {
     byte[] buffer = new byte[1024];  //Buffer to hold byte input
     boolean isOK = false;  // Flag set if input correct
@@ -160,6 +242,6 @@ public class PointCPTest
       isOK = false;
     }
     //Return a new PointCP object
-    return (new PointCP(coordType, a, b));
+    return (new PointCP4(coordType, a, b));
   }
 }
