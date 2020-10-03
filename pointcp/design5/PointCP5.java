@@ -31,15 +31,7 @@ public abstract class PointCP5{
     
     public abstract double getTheta(); 
 
-<<<<<<< HEAD
     public abstract PointCP5 rotatePoint(double rotation);  
 
 }
-=======
 
-    public abstract PointCP5 rotatePoint(double rotation);
-
-
-  
-}
->>>>>>> 259910564bcf26fe9fc816994c4e36c1aecb1386
