@@ -16,7 +16,7 @@ public class TestEfficiency {
             cpArray[i] = new PointCP((char)cOrP.charAt(r.nextInt(2)) , r.nextInt(1001), (double) r.nextInt(361));
         }
         long end = System.nanoTime();
-        System.out.println("Average PointCP Declaration time: "+String.valueOf(((end-start)/1000000000)/numberOfPoints));
+        System.out.println("Average PointCP Declaration time(runtime/numberOfPoints): "+String.valueOf(((end-start)/1000000000)/numberOfPoints));
 
 
 
@@ -26,6 +26,7 @@ public class TestEfficiency {
             cpArray2[i] = new PointCP2((char)cOrP.charAt(r.nextInt(2)) , r.nextInt(1001), (double) r.nextInt(361));
         }
         end = System.nanoTime();
+        System.out.println("Average PointCP2 Declaration time(runtime/numberOfPoints): "+String.valueOf(((end-start)/1000000000)/numberOfPoints));
 
 
 
@@ -33,6 +34,7 @@ public class TestEfficiency {
         for(int i = 0; i<numberOfPoints;i++){
             cpArray3[i] = new PointCP3((char)cOrP.charAt(r.nextInt(2)) , r.nextInt(1001), (double) r.nextInt(361));
         }
+        System.out.println("Average PointCP3 Declaration time(runtime/numberOfPoints): "+String.valueOf(((end-start)/1000000000)/numberOfPoints));
 
 
 
