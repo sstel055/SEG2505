@@ -42,14 +42,16 @@ public class Exercice2 {
 
         String addition = "";
         start = System.nanoTime();
-        for(int i = 0; i<50000000;i++){
-            addition += charArrayList.get(i);
+        for(Character i : charArrayList){
+            addition += i;
         }
         end = System.nanoTime();
 
         System.out.println("Array List addition with .get(i) run time: "+ String.valueOf((end-start)/1000000000));
 
         addition = "";
+
+
 
         
 
