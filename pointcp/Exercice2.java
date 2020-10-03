@@ -38,7 +38,7 @@ public class Exercice2 {
         end = System.nanoTime();
         System.out.println("Array run time: "+String.valueOf((end-start)/1000000000));
 
-        //////////////////Addition 
+        //////////////////Addition//////////////////////////////////////////////////////// 
 
         String addition = "";
         start = System.nanoTime();
@@ -49,7 +49,7 @@ public class Exercice2 {
 
         System.out.println("Array List addition with .get(i) run time: "+ String.valueOf((end-start)/1000000000));
 
-        addition ="";
+        addition = "";
 
         
 
