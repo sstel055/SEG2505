@@ -2,7 +2,7 @@ package design5;
 
 // This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
-// license found at www.lloseng.com 
+// license found at www.lloseng.com
 
 /**
  * This class contains instances of coordinates in either polar or
@@ -14,7 +14,7 @@ package design5;
  * @author Dr Timothy C. Lethbridge
  * @version July 2000
  */
-public class PointCP3 extends PointCP5
+public class PointCP3
 {
   //Instance variables ************************************************
 
@@ -23,20 +23,20 @@ public class PointCP3 extends PointCP5
    * coordinates that are being dealt with.
    */
   private char typeCoord;
-  
+
   /**
    * Contains the current value of X or RHO depending on the type
    * of coordinates.
    */
   private double x;
-  
+
   /**
    * Contains the current value of Y or THETA value depending on the
    * type of coordinates.
    */
   private double y;
-	
-  
+
+
   //Constructors ******************************************************
 
   /**
@@ -52,22 +52,21 @@ public class PointCP3 extends PointCP5
       this.x = (Math.cos(Math.toRadians(yOrTheta)) * xOrRho);
       this.y = (Math.sin(Math.toRadians(yOrTheta)) * xOrRho);
     }
- 
+
     this.typeCoord = 'C';
   }
-	
-  
+
+
   //Instance methods **************************************************
- 
- 
+
+
   public double getX(){return this.x;}
-  
+
   public double getY(){return this.y;}
-  
+
   public double getRho(){return (Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2))); }
   
-  public double getTheta(){return (Math.toDegrees(Math.atan2(this.y, this.x))) ;}
-  
+  public double getTheta(){return (Math.toDegrees(Math.atan2(this.x, this.y))) ;}
 
   /**
    * Calculates the distance in between two points using the Pythagorean
@@ -83,7 +82,7 @@ public class PointCP3 extends PointCP5
     // will be squared later.
     double deltaX = getX() - pointB.getX();
     double deltaY = getY() - pointB.getY();
-    
+
     return Math.sqrt((Math.pow(deltaX, 2) + Math.pow(deltaY, 2)));
   }
 
@@ -100,7 +99,7 @@ public class PointCP3 extends PointCP5
     double radRotation = Math.toRadians(rotation);
     double X = getX();
     double Y = getY();
-        
+
     return new PointCP3('C',
       (Math.cos(radRotation) * X) - (Math.sin(radRotation) * Y),
       (Math.sin(radRotation) * X) + (Math.cos(radRotation) * Y));
@@ -113,7 +112,7 @@ public class PointCP3 extends PointCP5
    */
   public String toString()
   {
-    return "Stored as " + (typeCoord == 'C' 
+    return "Stored as " + (typeCoord == 'C'
        ? "Cartesian  (" + getX() + "," + getY() + ")"
        : "Polar [" + getRho() + "," + getTheta() + "]") + "\n";
   }
