@@ -1,4 +1,3 @@
-// This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com 
 
@@ -72,7 +71,7 @@ public class PointCP2 extends PointCP5
    * @param pointB The second point.
    * @return The distance between the two points.
    */
-  public double getDistance(PointCP2 pointB)
+  public double getDistance(PointCP5 pointB)
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.

@@ -75,7 +75,7 @@ public class PointCP3 extends PointCP5
    * @param pointB The second point.
    * @return The distance between the two points.
    */
-  public double getDistance(PointCP3 pointB)
+  public double getDistance(PointCP5 pointB)
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.

@@ -120,7 +120,7 @@ public class TestEfficiency {
         
         start = System.nanoTime();
         for (int i=0; i<numberOfPoints; i++) {
-            cpArray[i].getDistance(PointCP(cp[i],0,0));//XXX
+            cpArray[i].getDistance( new PointCP(cp[i],0.0,0.0) );
         }
         end = System.nanoTime();
         System.out.println("PointCP getDistance time(ms): "+String.valueOf((end-start)/1000000));
@@ -128,7 +128,7 @@ public class TestEfficiency {
         //getDistance() fuction test for PointCP5
         start = System.nanoTime();
         for (int i=0; i<numberOfPoints; i++) {
-            cp5Array[i].getDistance(PointCP5(cp[i],0,0));//XXX
+            cp5Array[i].getDistance(new PointCP5(cp[i],0.0,0.0));//XXX
         }
         end = System.nanoTime();
         System.out.println("PointCP5 getDistance time(ms): "+String.valueOf((end-start)/1000000));
