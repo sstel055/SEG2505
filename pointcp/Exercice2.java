@@ -32,7 +32,7 @@ public class Exercice2 {
         ////////////////Array
         Character[] charArray = new Character[1000000];
         start = System.nanoTime();
-        for(int i = 0; i < 1000000;i++){
+        for(int i = 0; i <= 1000000;i++){
             charArray[i] = (char) (rand.nextInt(26)+'a');
         }
         end = System.nanoTime();
