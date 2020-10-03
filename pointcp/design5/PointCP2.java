@@ -1,3 +1,5 @@
+package design5;
+
 // This file contains material supporting section 2.9 of the textbook:
 // "Object Oriented Software Engineering" and is issued under the open-source
 // license found at www.lloseng.com 
@@ -50,7 +52,7 @@ public class PointCP2 extends PointCP5
       this.rho = xOrRho;
       this.theta = yOrTheta;
     }
-    this.typeCoord = P;
+    this.typeCoord = 'P';
   }
 	
   //Instance methods **************************************************
@@ -76,7 +78,7 @@ public class PointCP2 extends PointCP5
   {
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
-    double x = getx();
+    double x = getX();
     double deltaX = getX() - pointB.getX();
     double deltaY = getY() - pointB.getY();
     
