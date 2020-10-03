@@ -42,24 +42,24 @@ public class Exercice2 {
         @SuppressWarnings("unused")
         String addition = "";
         start = System.nanoTime();
-        for(Character i : charArrayList){
-            addition += i;
+        for(int i = 0; i < charArrayList.size(); i++){
+            addition += charArrayList.get(i);
         }
         end = System.nanoTime();
         System.out.println("Array List addition with advanced for loop run time: "+ String.valueOf((end-start)/1000000000));
 
         addition = "";
         start = System.nanoTime();
-        for(Character i: linkedChar){
-            addition+= i;
+        for(int i = 0; i< linkedChar.size(); i++){
+            addition+= linkedChar.get(i);
         }
         end = System.nanoTime();
         System.out.println("LinkedList addition with advanced for loop run time: "+ String.valueOf((end-start)/1000000000));
 
         addition="";
         start = System.nanoTime();
-        for(Character i: charArray){
-            addition+=i;
+        for(int i = 0; i < charArray.length; i++){
+            addition += charArray[i];
         }
         end = System.nanoTime();
         System.out.println("Array addition with advanced for loop run time: "+ String.valueOf((end-start)/1000000000));
