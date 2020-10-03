@@ -79,7 +79,7 @@ public class PointCP2
     // Obtain differences in X and Y, sign is not important as these values
     // will be squared later.
     double deltaX = getX() - pointB.getX();
-    double deltaY = getY() - pointB.getY();
+    double deltaY = getY() - pointB.getY(); 
     
     return Math.sqrt((Math.pow(deltaX, 2) + Math.pow(deltaY, 2)));
   }
