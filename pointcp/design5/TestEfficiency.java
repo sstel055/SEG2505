@@ -38,7 +38,6 @@ public class TestEfficiency {
 
 
         //Declaration for PointCP5
-        time = new long[9];
         for(int y = 0; y < 10; y++){
             long start = System.nanoTime();
             for(int i = 0; i<numberOfPoints;i++){
@@ -57,7 +56,6 @@ public class TestEfficiency {
 
         ////////////////////////////////////////////////////////getX() Section//////////////////////////////////////////////////////////
         //getX() function test for PointCP
-        time = new long[9];
         for(int x = 0; x < 9; x++){
             long start = System.nanoTime();
             for (int i=0; i<numberOfPoints; i++) {
@@ -73,7 +71,6 @@ public class TestEfficiency {
         
         
         //getx() fuction test for PointCP5.
-        time = new long[9];
         for(int x = 0; x < 9; x++){
             long start = System.nanoTime();
             for (int i=0; i<numberOfPoints; i++) {
@@ -89,6 +86,7 @@ public class TestEfficiency {
 
         //////////////////////////////////////////////////////////getY() Section///////////////////////////////////////////
         //getY() function test for PointCP
+        
         for(int x = 0; x < 9; x++){
             long start = System.nanoTime();
             for (int i=0; i<numberOfPoints; i++) {
@@ -103,7 +101,6 @@ public class TestEfficiency {
 
 
         //getY() fuction test for PointCP5
-        time = new long[9];
         for(int x = 0; x < 9; x++){
             long start = System.nanoTime();
             for (int i=0; i<numberOfPoints; i++) {
@@ -119,78 +116,116 @@ public class TestEfficiency {
 
         //////////////////////////////////////////////////////////getRho() Section///////////////////////////////////////////
         //getRho() function test for PointCP
-        long start = System.nanoTime();
-        for (int i=0; i<numberOfPoints; i++) {
-            cpArray[i].getRho();
+        for(int x = 0; x < 9; x++){
+            long start = System.nanoTime();
+            for (int i=0; i<numberOfPoints; i++) {
+                cpArray[i].getRho();
+            }
+            long end = System.nanoTime();
+            time[x] = (end-start)/1000000;
+            System.out.println("PointCP getRho time(ms): "+ String.valueOf((end-start)/1000000));
         }
-        long end = System.nanoTime();
-        System.out.println("PointCP getRho time(ms): "+ String.valueOf((end-start)/1000000));
+        Arrays.sort(time);
+        System.out.println("\nMin time: " + time[0] + " Median: " + time[4] + " Max time: " + time[8]  + " Average time: " + Double.toString(average(time)));
 
         //gethrho() fuction test for PointCP5
-        long start = System.nanoTime();
-        for (int i=0; i<numberOfPoints; i++) {
-            cp5Array[i].getRho();
+        for(int x = 0; x < 9; x++){
+            long start = System.nanoTime();
+            for (int i=0; i<numberOfPoints; i++) {
+                cp5Array[i].getRho();
+            }
+            long end = System.nanoTime();
+            time[x] = (end-start)/1000000;
+            System.out.println("PointCP5 getRho time(ms): "+ String.valueOf((end-start)/1000000));
         }
-        long end = System.nanoTime();
-        System.out.println("PointCP5 getRho time(ms): "+ String.valueOf((end-start)/1000000));
-
+        Arrays.sort(time);
+        System.out.println("\nMin time: " + time[0] + " Median: " + time[4] + " Max time: " + time[8]  + " Average time: " + Double.toString(average(time)));
 
         //////////////////////////////////////////////////////////getTheta() Section///////////////////////////////////////////
         //gettheta() function test for PointCP
-        long start = System.nanoTime();
-        for (int i=0; i<numberOfPoints; i++) {
-            cpArray[i].getTheta();
+        for(int x = 0; x < 9; x++){
+            long start = System.nanoTime();
+            for (int i=0; i<numberOfPoints; i++) {
+                cpArray[i].getTheta();
+            }
+            long end = System.nanoTime();
+            time[x] = (end-start)/1000000;
+            System.out.println("PointCP getTheta time(ms): "+String.valueOf((end-start)/1000000));
         }
-        long end = System.nanoTime();
-        System.out.println("PointCP getTheta time(ms): "+String.valueOf((end-start)/1000000));
+        Arrays.sort(time);
+        System.out.println("\nMin time: " + time[0] + " Median: " + time[4] + " Max time: " + time[8]  + " Average time: " + Double.toString(average(time)));
 
         //gettheta() fuction test for PointCP5
-        long start = System.nanoTime();
-        for (int i=0; i<numberOfPoints; i++) {
-            cp5Array[i].getTheta();
+        for(int x = 0; x < 9; x++){
+            long start = System.nanoTime();
+            for (int i=0; i<numberOfPoints; i++) {
+                cp5Array[i].getTheta();
+            }
+            long end = System.nanoTime();
+            time[x] = (end-start)/1000000;
+            System.out.println("PointCP5 getTheta time(ms): "+String.valueOf((end-start)/1000000));
         }
-        long end = System.nanoTime();
-        System.out.println("PointCP5 getTheta time(ms): "+String.valueOf((end-start)/1000000));
+        Arrays.sort(time);
+        System.out.println("\nMin time: " + time[0] + " Median: " + time[4] + " Max time: " + time[8]  + " Average time: " + Double.toString(average(time)));
 
 
         //////////////////////////////////////////////////////////getDistance() Section///////////////////////////////////////////
         //getDistance() function test for PointCP
-        long start = System.nanoTime();
-        for (int i=0; i<numberOfPoints; i++) {
-            cpArray[i].getDistance( new PointCP(cp[i],0.0,0.0) );
+        for(int x = 0; x < 9; x++){
+            long start = System.nanoTime();
+            for (int i=0; i<numberOfPoints; i++) {
+                cpArray[i].getDistance( new PointCP(cp[i],0.0,0.0) );
+            }
+            long end = System.nanoTime();
+            time[x] = (end-start)/1000000;
+            System.out.println("PointCP getDistance time(ms): "+String.valueOf((end-start)/1000000));
         }
-        long end = System.nanoTime();
-        System.out.println("PointCP getDistance time(ms): "+String.valueOf((end-start)/1000000));
-
+        Arrays.sort(time);
+        System.out.println("\nMin time: " + time[0] + " Median: " + time[4] + " Max time: " + time[8]  + " Average time: " + Double.toString(average(time)));
+        
         //getDistance() fuction test for PointCP5
-        long start = System.nanoTime();
-        for (int i=0; i<numberOfPoints; i++) {
-            cp5Array[i].getDistance(new PointCP3(cp[i],0.0,0.0));
+        for(int x = 0; x < 9; x++){
+            long start = System.nanoTime();
+            for (int i=0; i<numberOfPoints; i++) {
+                cp5Array[i].getDistance(new PointCP3(cp[i],0.0,0.0));
+            }
+            long end = System.nanoTime();
+            time[x] = (end-start)/1000000;
+            System.out.println("PointCP5 getDistance time(ms): "+String.valueOf((end-start)/1000000));
         }
-        long end = System.nanoTime();
-        System.out.println("PointCP5 getDistance time(ms): "+String.valueOf((end-start)/1000000));
-
+        Arrays.sort(time);
+        System.out.println("\nMin time: " + time[0] + " Median: " + time[4] + " Max time: " + time[8]  + " Average time: " + Double.toString(average(time)));
+        
 
         //////////////////////////////////////////////////////////rotatePoint() Section///////////////////////////////////////////
         //rotatePoint() function test for PointCP
-        long start = System.nanoTime();
-        for (int i=0; i<numberOfPoints; i++) {
-            cpArray[i].rotatePoint(angle[i]);
+        for(int x = 0; x < 9; x++){
+            long start = System.nanoTime();
+            for (int i=0; i<numberOfPoints; i++) {
+                cpArray[i].rotatePoint(angle[i]);
+            }
+            long end = System.nanoTime();
+            time[x] = (end-start)/1000000;
+            System.out.println("PointCP rotatePoint time(ms): "+String.valueOf((end-start)/1000000));
         }
-        long end = System.nanoTime();
-        System.out.println("PointCP rotatePoint time(ms): "+String.valueOf((end-start)/1000000));
+        Arrays.sort(time);
+        System.out.println("\nMin time: " + time[0] + " Median: " + time[4] + " Max time: " + time[8]  + " Average time: " + Double.toString(average(time)));
 
         //rotatePoint() fuction test for PointCP5
-        
-        long start = System.nanoTime();
-        for (int i=0; i<numberOfPoints; i++) {
-            cp5Array[i].rotatePoint(angle[i]);
+        for(int x = 0; x < 9; x++){
+            long start = System.nanoTime();
+            for (int i=0; i<numberOfPoints; i++) {
+                cp5Array[i].rotatePoint(angle[i]);
+            }
+            long end = System.nanoTime();
+            time[x] = (end-start)/1000000;
+            System.out.println("PointCP5 rotatePoint time(ms): "+String.valueOf((end-start)/1000000));
         }
-        long end = System.nanoTime();
-        System.out.println("PointCP5 rotatePoint time(ms): "+String.valueOf((end-start)/1000000));
-
+        Arrays.sort(time);
+        System.out.println("\nMin time: " + time[0] + " Median: " + time[4] + " Max time: " + time[8]  + " Average time: " + Double.toString(average(time)));
 
     }
+    
     public static double average(long[] times){
         long sum = 0;
         for(int i = 0; i < times.length; i++){
