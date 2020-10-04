@@ -38,7 +38,7 @@ public class TestEfficiency {
 
 
         //Declaration for PointCP5
-        for(int y = 0; y < 10; y++){
+        for(int y = 0; y < 9; y++){
             long start = System.nanoTime();
             for(int i = 0; i<numberOfPoints;i++){
                 if (cp[i] == 'P') {
