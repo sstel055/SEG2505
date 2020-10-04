@@ -10,8 +10,8 @@ public class TestEfficiency {
         PointCP5[] cp5Array = new PointCP5[numberOfPoints];
         PointCP[] cpArray = new PointCP[numberOfPoints];
         char[] cp = new char[numberOfPoints];
-        double theta[] = new double[numberOfPoints];
-        double rho[] = new double[numberOfPoints];
+        double[] theta = new double[numberOfPoints];
+        double[] rho = new double[numberOfPoints];
         double[] angle = new double[numberOfPoints];
         Random r = new Random();
         String cOrP = "CP";
