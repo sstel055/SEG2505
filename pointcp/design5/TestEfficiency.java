@@ -2,7 +2,7 @@ import java.util.*;
 public class TestEfficiency {
     public static void main(String[] args) {
 
-        int numberOfPoints = 1000000;
+        int numberOfPoints = 500000;
         PointCP5[] cp5Array = new PointCP5[numberOfPoints];
         PointCP[] cpArray = new PointCP[numberOfPoints];
         char[] cp = new char[numberOfPoints];
