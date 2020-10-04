@@ -1,10 +1,6 @@
 import java.util.Random;
 public class TestEfficiency {
     public static void main(String[] args) {
-        PointCP5 point;
-        if(args[0].charAt(0) == 'C'){
-            point = new PointCP3(args[0].charAt(0), Double.valueOf(args[1]).doubleValue(), Double.valueOf(args[2]).doubleValue());
-        }
 
         int numberOfPoints = 1000000;
         PointCP5[] cp5Array = new PointCP5[numberOfPoints];
