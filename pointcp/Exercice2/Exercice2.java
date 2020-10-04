@@ -16,7 +16,7 @@ public class Exercice2 {
             charArrayList.add(Character.valueOf((char) (rand.nextInt(26)+'a')));
         }
         long end = System.nanoTime();
-        System.out.println("Array List run time: "+ String.valueOf((end-start)/1000000000));
+        System.out.println("Array List run time: "+ String.valueOf((end-start)/1000000));
 
 
         //////////////LinkedList
@@ -26,7 +26,7 @@ public class Exercice2 {
             linkedChar.add(Character.valueOf((char) (rand.nextInt(26)+'a')));
         }
         end = System.nanoTime();
-        System.out.println("Linked List run time: "+String.valueOf((end-start)/1000000000));
+        System.out.println("Linked List run time: "+String.valueOf((end-start)/1000000));
 
 
         ////////////////Array
@@ -36,7 +36,7 @@ public class Exercice2 {
             charArray[i] = (char) (rand.nextInt(26)+'a');
         }
         end = System.nanoTime();
-        System.out.println("Array run time: "+String.valueOf((end-start)/1000000000));
+        System.out.println("Array run time: "+String.valueOf((end-start)/1000000));
 
         //////////////////Addition////////////////////////////////////////////////////////
         @SuppressWarnings("unused")
@@ -46,7 +46,7 @@ public class Exercice2 {
             addition += charArrayList.get(i);
         }
         end = System.nanoTime();
-        System.out.println("Array List addition run time: "+ String.valueOf((end-start)/1000000000));
+        System.out.println("Array List addition run time: "+ String.valueOf((end-start)/1000000));
 
         addition = "";
         start = System.nanoTime();
@@ -54,7 +54,7 @@ public class Exercice2 {
             addition+= linkedChar.get(i);
         }
         end = System.nanoTime();
-        System.out.println("LinkedList addition run time: "+ String.valueOf((end-start)/1000000000));
+        System.out.println("LinkedList addition run time: "+ String.valueOf((end-start)/1000000));
 
         addition="";
         start = System.nanoTime();
@@ -62,7 +62,7 @@ public class Exercice2 {
             addition += charArray[i];
         }
         end = System.nanoTime();
-        System.out.println("Array addition run time: "+ String.valueOf((end-start)/1000000000));
+        System.out.println("Array addition run time: "+ String.valueOf((end-start)/1000000));
 
     }
 }
