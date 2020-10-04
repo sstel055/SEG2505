@@ -1,6 +1,11 @@
 import java.util.Random;
 public class TestEfficiency {
     public static void main(String[] args) {
+        PointCP5 point;
+        if(args[0].charAt(0) == 'C'){
+            point = new PointCP3(args[0].charAt(0), Double.valueOf(args[1]).doubleValue(), Double.valueOf(args[2]).doubleValue());
+        }
+
         int numberOfPoints = 1000000;
         PointCP5[] cp5Array = new PointCP5[numberOfPoints];
         PointCP[] cpArray = new PointCP[numberOfPoints];
@@ -40,7 +45,7 @@ public class TestEfficiency {
             }
         }
         end = System.nanoTime();
-        System.out.println("PointCP5 Declaration time(runtime/numberOfPoints): "+String.valueOf((end-start)/1000000));
+        System.out.println("PointCP5 Declaration time(ms): "+String.valueOf((end-start)/1000000));
         
 
         ////////////////////////////////////////////////////////getX() Section//////////////////////////////////////////////////////////
@@ -80,7 +85,7 @@ public class TestEfficiency {
 
 
         //////////////////////////////////////////////////////////getRho() Section///////////////////////////////////////////
-        //getrho() function test for PointCP
+        //getRho() function test for PointCP
         start = System.nanoTime();
         for (int i=0; i<numberOfPoints; i++) {
             cpArray[i].getRho();
@@ -117,7 +122,6 @@ public class TestEfficiency {
 
         //////////////////////////////////////////////////////////getDistance() Section///////////////////////////////////////////
         //getDistance() function test for PointCP
-        
         start = System.nanoTime();
         for (int i=0; i<numberOfPoints; i++) {
             cpArray[i].getDistance( new PointCP(cp[i],0.0,0.0) );
@@ -128,7 +132,7 @@ public class TestEfficiency {
         //getDistance() fuction test for PointCP5
         start = System.nanoTime();
         for (int i=0; i<numberOfPoints; i++) {
-            cp5Array[i].getDistance(new PointCP5(cp[i],0.0,0.0));//XXX
+            cp5Array[i].getDistance(new PointCP3(cp[i],0.0,0.0));
         }
         end = System.nanoTime();
         System.out.println("PointCP5 getDistance time(ms): "+String.valueOf((end-start)/1000000));
@@ -136,10 +140,9 @@ public class TestEfficiency {
         
         //////////////////////////////////////////////////////////rotatePoint() Section///////////////////////////////////////////
         //rotatePoint() function test for PointCP
-        
         start = System.nanoTime();
         for (int i=0; i<numberOfPoints; i++) {
-            cpArray[i].rotatePoint(angle[i]);//XXX
+            cpArray[i].rotatePoint(angle[i]);
         }
         end = System.nanoTime();
         System.out.println("PointCP rotatePoint time(ms): "+String.valueOf((end-start)/1000000));
@@ -147,7 +150,7 @@ public class TestEfficiency {
         //rotatePoint() fuction test for PointCP5
         start = System.nanoTime();
         for (int i=0; i<numberOfPoints; i++) {
-            cp5Array[i].rotatePoint(angle[i]);//XXX
+            cp5Array[i].rotatePoint(angle[i]);
         }
         end = System.nanoTime();
         System.out.println("PointCP5 rotatePoint time(ms): "+String.valueOf((end-start)/1000000));
