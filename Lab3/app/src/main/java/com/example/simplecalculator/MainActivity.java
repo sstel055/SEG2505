@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 import java.util.*;
 
+import static java.lang.Double.NaN;
+
 public class MainActivity extends AppCompatActivity {
     private enum  Operator {none, add, minus, multiply, divide}
     private double num1 = 0, num2 = 0;
@@ -112,15 +114,20 @@ public class MainActivity extends AppCompatActivity {
             } else if(optr == Operator.divide){
                 result = num1 / num2;
             }
-            optr = Operator.none;
-            num1 = result;
-            if(result - (int)result != 0){
+
+            if(num2 == 0 && optr == Operator.divide) {
+                num1 = 0;
+                num2 = 0;
+                resultView.setText("NaN");
+            }else if(result - (int)result != 0){
                 result = Math.round(result*1000000000);
                 result = result/(1000000000);
                 resultView.setText(String.valueOf(result));
             } else {
                 resultView.setText(String.valueOf((int)result));
             }
+            optr = Operator.none;
+            num1 = result;
         }
     }
 }
