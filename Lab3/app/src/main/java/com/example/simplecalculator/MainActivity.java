@@ -5,9 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import java.util.*;
-
-import static java.lang.Double.NaN;
 
 public class MainActivity extends AppCompatActivity {
     private enum  Operator {none, add, minus, multiply, divide}
@@ -97,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
         if(resultView.getText().toString() == ""){
             num1 = 0;
         }
+        num2 = 0;
         resultView.setText("");
     }
 
@@ -118,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             if(num2 == 0 && optr == Operator.divide) {
                 num1 = 0;
                 num2 = 0;
-                resultView.setText("NaN");
+                resultView.setText("Error");
             }else if(result - (int)result != 0){
                 result = Math.round(result*1000000000);
                 result = result/(1000000000);
