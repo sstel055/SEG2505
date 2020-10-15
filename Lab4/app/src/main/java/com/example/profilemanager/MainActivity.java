@@ -46,22 +46,22 @@ public class MainActivity extends AppCompatActivity {
         String drawableName = "ic_logo_00";
         switch (data.getIntExtra("imageID", R.id.imageView)) {
             case R.id.imageView:
-                drawableName = "ic_logo_00";
-                break;
-            case R.id.imageView2:
                 drawableName = "ic_logo_01";
                 break;
-            case R.id.imageView3:
+            case R.id.imageView2:
                 drawableName = "ic_logo_02";
                 break;
-            case R.id.imageView4:
+            case R.id.imageView3:
                 drawableName = "ic_logo_03";
                 break;
-            case R.id.imageView5:
+            case R.id.imageView4:
                 drawableName = "ic_logo_04";
                 break;
-            case R.id.imageView6:
+            case R.id.imageView5:
                 drawableName = "ic_logo_05";
+                break;
+            case R.id.imageView6:
+                drawableName = "ic_logo_00";
                 break;
             default:
                 drawableName = "ic_logo_00";
