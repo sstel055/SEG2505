@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <TextView
+        <EditText
             android:id="@+id/txtName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <TextView
+        <EditText
             android:id="@+id/txtPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,7 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Add" />
+            android:text="Add"
+            android:onClick="Add" />
 
         <Space
             android:layout_width="match_parent"
@@ -59,15 +60,11 @@
             android:layout_gravity="center"
             android:textAlignment="center"/>
 
-        <ScrollView
+        <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="20">
+            android:id="@+id/list"
+            android:layout_weight="20"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-        </ScrollView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
