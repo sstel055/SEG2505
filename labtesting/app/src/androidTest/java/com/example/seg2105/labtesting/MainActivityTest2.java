@@ -24,13 +24,13 @@ public class MainActivityTest2 {
         onView(withId(R.id.Lastname)).perform(typeText("test"), closeSoftKeyboard());
         onView(withId(R.id.email)).perform(typeText("email@"), closeSoftKeyboard());
         onView(withId(R.id.loginBtn)).perform(click());
-        onView(withText("InvalidEmail")).check(matches(isDisplayed()));
+        onView(withText("Invalid Email")).check(matches(isDisplayed()));
     }
 
     @Test
     public void firstIsInvalid(){
         onView(withId(R.id.username)).perform(typeText("user1"), closeSoftKeyboard());
         onView(withId(R.id.loginBtn)).perform(click());
-        onView(withText("Invalid FirstName")).check(matches(isDisplayed()));
+        onView(withText("Invalid First Name")).check(matches(isDisplayed()));
     }
 }
